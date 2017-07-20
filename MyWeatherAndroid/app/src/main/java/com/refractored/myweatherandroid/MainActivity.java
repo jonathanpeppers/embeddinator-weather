@@ -27,16 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
         progressBar.setVisibility(View.INVISIBLE);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                XAMWeatherFetcher fetcher = new XAMWeatherFetcher(city.getText().toString(), state.getText().toString());
-                XAMWeatherResult result = fetcher.getWeather();
-                if (result != null) {
-                    weather.setText(result.getTemp() + "°F " +  result.getText());
-                } else {
-                    weather.setText("An error occurred :(");
-                }
+        button.setOnClickListener((View v) -> {
+            XAMWeatherFetcher fetcher = new XAMWeatherFetcher(city.getText().toString(), state.getText().toString());
+            XAMWeatherResult result = fetcher.getWeather();
+            if (result != null) {
+                weather.setText(result.getTemp() + "°F " +  result.getText());
+            } else {
+                weather.setText("An error occurred :(");
             }
         });
     }
