@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace WeatherAndroid
 {
-    [Activity(Label = "WeatherActivity"), Register("weatherandroid_dll.WeatherActivity")]
+    [Activity(Label = "WeatherActivity"), Register("weatherandroid.WeatherActivity")]
     public class WeatherActivity : Activity
     {
 
